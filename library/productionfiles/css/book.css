@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.man {
+  border-radius: 200px;
+  margin: 60px;
+  align-items: center;
+  margin-left: 900px;
+}
+input {
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 250px;
+}
+button {
+  left: 200px;
+  top: 20px;
+  width: 40px;
+  margin-left: -50px;
+  border: transparent;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.card {
+  background: blue;
+  width: 270px;
+  height: 450px;
+  margin: 10px;
+}
+.card-image {
+  background-color: blueviolet;
+  height: 250px;
+  margin-bottom: 15px;
+
+  background-size: cover;
+}
+
+.car-1 {
+  background-image: url(./books/book-cover-template-design_1201-30.jpg);
+}
+.car-2 {
+  background-image: url(./books/business-annual-report-cover-page-design-template-vector.jpg);
+}
+.car-3 {
+  background-image: url(./books/pngtree-abstract-warm-autumn-book-cover-with-bronzing-leaves-image_401042.jpg);
+}
+.car-4 {
+  background-image: url(./books/pngtree-color-matching-autumn-photography-book-cover-design-image_400413.jpg);
+}
+.car-5 {
+  background-image: url(./books/pngtree-warm-autumn-bronzing-leaves-abstract-book-cover-image_400813.jpg);
+}
+.car-6 {
+  background-image: url(./books/book-cover-template-design_1201-30.jpg);
+}
+.car-7 {
+  background-image: url(./books/business-annual-report-cover-page-design-template-vector.jpg);
+}
+.car-8 {
+  background-image: url(./books/pngtree-abstract-warm-autumn-book-cover-with-bronzing-leaves-image_401042.jpg);
+}
+.car-9 {
+  background-image: url(./books/pngtree-color-matching-autumn-photography-book-cover-design-image_400413.jpg);
+}
+.car-10 {
+  background-image: url(./books/pngtree-warm-autumn-bronzing-leaves-abstract-book-cover-image_400813.jpg);
+}
+.card h2 {
+  padding: 10px;
+}
+.card p {
+  padding: 10px;
+}
+.card a {
+  background-color: black;
+  padding: 15px 20px;
+  display: block;
+  width: 50%;
+  align-items: center;
+  margin: 40px;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 20px;
+  text-decoration: none;
+}
+.card:hover {
+  background-color: rgb(62, 62, 62);
+  color: white;
+  cursor: pointer;
+  transform: scale(1);
+  transition: all is ease;
+}

@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books</title>
+    <link rel="stylesheet" href="{% static 'css/book1.css' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="./books/cozy logo.png">
+    <script type="text/javascript" src="{% static 'index.js' %}"></script>
+    <script type="text/javascript" src="{% static 'script.js' %}"></script>
+  </head>
+  <body>
+    <!--Header part-->
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="home.html">
+            <img src="{% static 'images/logo.png' %}" alt="logo">
+            <h1>COZY E-LIBRARY</h1>
+          </a>
+        </div>
+        <div class="menu">
+          <a href="/" style="border: 2px solid rgb(97, 100, 100)"><div>HOME</div></a>
+          <a href=""><div>BOOKS</div></a>
+          <!-- <a href=""><div>ARTICLES</div></a> -->
+          {% if user.is_authenticated%}
+              
+              <a href="{%url 'logout'%}">Logout</a>
+              <img height="30px" width="20px" border-radius="8px" src="{% static 'images/icons8-sign-up-64.png' %}" alt="">
+              <h6>Welcome,<b> {{user.username}} </b></h6>
+              {%else%}
+          <a href="{% url 'about'%}"><div>ABOUT</div></a>
+        </div>
+          {%endif%}
+        
+      </nav>
+    </header>
+
+
+    <!--showcase part-->
+    <div class="showcase">
+      <img src="{% static 'images/unsplash-gray-book-list-a62bcc082c3c40c8efc69168cda2a7c8.jpg' %}" alt="showpic">
+    </div>
+
+
+
+    <!--main section-->
+    <section>
+      <!--book subtitle-->
+      <div class="ontop"><h1>BOOKS</h1></div>
+      
+
+      <!--card part-->
+      {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+      <div class="card-container">
+        {% for book in books %}
+        <div class="card" data-id="1">
+          <div class="img-container">
+            <img onclick="chooseImage('{{ book.image.url }}')" class="book-cover" src="{{ book.image.url }}" alt="{{ book.title }}">
+          </div>
+          <div class="card-discription">
+            
+            <h6>BOOK NAME: {{ book.title }}</h6>
+            <p class="date">DATE:{{book.pub_date}}</p>
+          </div>
+          <div class="download-container">
+            <img src="{% static 'images/download-regular-24.png' %}" alt="">
+            {% if user.is_authenticated %}
+            <h2><a  download="{{ image.title }}" href="{% url 'download_book' book.id %}">Download</a></h2>
+            {%else%}
+            <p>login to download</p>
+            {%endif%}
+          </div>
+        </div>
+        {%endfor %}
+      </div>
+      
+       
+        
+      <!-- ending design-->
+      <div class="fancy">
+        <img src="{% static 'images/kindpng_1498863.png' %}" alt="">
+      </div>
+      <div class="insptext">
+        <h1>KNOWLEDGE IS POWER!!!</h1>
+      </div>
+    </section>
+
+    <!--footer components-->
+    <div class="top"><img class="footerborder" src="{% static 'images/bg-footer-top-desktop.svg' %}" alt=""></div>
+    <div class="footer">
+      <div class="footerleft">
+        <div>
+          <img class="footerlogo" src="{% static 'images/logo.png' %}" alt="">
+        </div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla quam, hendrerit lacinia 
+          vestibulum a, ultrices quis sem.
+        </div>
+        <div class="phone">
+          <img src="{% static 'images/icon-phone.svg' %}" alt="">
+          <p>Phone: +1-543-123-4567</p>
+        </div>
+        <div class="phone">
+          <img src="(% static 'images/icon-email.svg' %)" alt="">
+          <p>example@huddle.com</p>
+        </div>
+        <div style="display: flex; width: 100px; justify-content: space-between;">
+          <img style="width: 22px;height: 22px; background-color: white; padding: 0px; margin-top: 20px;" src="{% static 'images/square-facebook.svg' %}" alt="fblogo">
+          <img style="width: 22px;height: 22px; background-color: white; padding: 0px; margin-top: 20px;" src="{% static 'images/instagram.svg' %}" alt="iglogo">
+          <img style="width: 22px;height: 22px; background-color: white; padding: 0px; margin-top: 20px;" src="{% static 'images/square-twitter.svg' %}" alt="twitlogo">
+        </div>
+      </div>
+      <div class="footerright">
+        <h1>NEWSLETTER</h1>
+        <p>To recieve tips on how to grow your community, sign up to our weekly newsletter. We’ll never 
+          send you spam or pass on your email address
+        </p>
+        <div>
+          <input type="text">
+          <button>Subscribe</button>
+        </div>
+      </div>
+    </div>
+
+
+   
+
+    <script>
+      function chooseImage(image) {
+        localStorage.setItem('selectedImage', image);
+      }
+    </script>
+
+  </body>
+</html>

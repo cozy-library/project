@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Outfit:wght@400;500;700&family=Rubik:wght@700&display=swap');
+*{
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: rgb(230, 228, 228);
+  font-family: rubik;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* header styling */
+header{
+  width: 100%;
+  height: 70px;
+  
+}
+nav{
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  position: fixed;
+  z-index: 1;
+  box-shadow: 1px  1px 20px rgba(0,0,0,0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+nav > div> a >img{
+  width: 42px;
+  height: 42px;
+}
+nav >.logo >a{
+  width: 300px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.logo a {
+  cursor: default;
+}
+.logo h1,.logo img:hover{
+  cursor: pointer;
+}
+nav > .menu{
+  width: 40%;
+  display: flex;
+  color: rgb(14, 9, 9);
+  justify-content: space-around;
+  align-items: center;
+}
+nav > .menu > a{
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  border-radius: 50px;
+  margin-left: 10px;
+  transition: background-color .3s ease-in, color .3s ease-in;
+  text-decoration: none;
+  color: rgb(14, 9, 9);
+}
+nav > .menu > a:hover{
+ background-color: rgb(97, 100, 100);
+ color: white;
+ cursor: pointer;
+}
+nav .sign{
+  width: 30px;
+  height: 30px;
+  margin-right: 50px;
+}
+nav >.sign >img{
+  width: 100%;
+  height: 100%;
+}
+
+/* showcase styling */
+.showcase{
+  width: 100%;
+  height: 230px;
+  position: relative;
+}
+.showcase img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* this section contains styling of the books */
+section{
+  width: 100%;
+}
+section .ontop{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+section > .ontop > h1{
+  width: 350px;
+  height: 80px;
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(87, 87, 219);
+  clip-path: polygon(100% 0%,93% 50%,100% 99%,0% 100%,7% 50%,0% 0%);
+}
+
+/* cards styling */
+.card-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 50px;
+  padding: 5%;
+  justify-content: space-between;
+  column-gap: 30px;
+  border-radius: 15px;
+  box-shadow: 5px  5px 10px rgba(0,0,0,0.25);
+  margin-bottom: 100px;
+}
+@media only screen and (max-width: 700px) {
+  .card-container{
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5px;
+  }
+  .insptext > h1{
+    font-size: 30px;
+    font-weight: 400;
+  }
+}
+@media only screen and (min-width: 701px) {
+  .card-container{
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+  }
+  .insptext > h1{
+    font-size: 40px;
+    font-weight: 500;
+  }
+ 
+}
+@media only screen and (min-width: 1200px) {
+  .card-container{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 30px;
+  }
+  .insptext > h1{
+    font-size: 50px;
+  }
+}
+.card {
+  background: white;
+  border: 2px solid rgb(206, 205, 205);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  height: 400px;
+  box-shadow: 1px  1px 10px rgba(0,0,0,0.25);
+  
+}
+.card .img-container{
+  width: 99%;
+  height: 60%;
+  background-color: antiquewhite;
+}
+.card .card-discription{
+  width: 99%;
+  height: 25%;
+  background-color: rgb(168, 180, 180);
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card .download-container{
+  width: 99%;
+  height: 14%;
+  background-color: rgb(127, 168, 255);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.img-container img{
+  width: 100%;
+  height: 100%;
+}
+.download-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.download-container h2{
+  margin-left: 20px;
+}
+.card-discription h4, .card-discription p{
+  margin: 0;
+}
+.date{
+  font-size: 10px;
+  color: rgb(236, 233, 233);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.fancy{
+  margin-top: 180px;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fancy img{
+  width: 40%;
+  height: 100%;
+}
+.insptext{
+  width: 100%;
+  height: 100px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 5px 5px rgba(0,0,0,0.25);
+  margin-bottom: 100px;
+  text-align: center;
+}
+.top{
+  width: 100%;
+}
+.footerborder{
+    width: 100%;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -5px;
+    width: 100%;
+    min-height: 300px;
+    background-color: #1a1a1a;
+    color: white;
+}
+.footerleft{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-left: 100px;
+    font-family: open sans;
+}
+.footerlogo{
+  width: 60px;
+  height: 60px;
+}
+.phone{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+}
+.phone img{
+    width: 40px;
+    height: 25px;
+    padding-right: 20px;
+}
+.footerright{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-right: 5%;
+    font-family: open sans;
+}
+.footerright div button{
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color:hsl(322, 100%, 66%);
+    border: 2px solid hsl(322, 100%, 66%);
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.25);
+    margin-top: 30px;
+    cursor: pointer;
+}
+.footerright div button:active{
+    background-color: hsl(321, 100%, 78%);
+    color: white;
+}
