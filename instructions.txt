@@ -1,0 +1,8 @@
+HOW TO GET THE COZY-LIBRARY WEB APP RUNNING
+1.	Clone the repository.
+2.	Open the project folder and navigate to the “library” folder.
+3.	Make sure you have python installed on your working machine and open the library folder with any code editor.
+4.	To get the files running, we have created a virtual environment to keep all our projects separate from other projects on our working machines and we named the virtual environment as “env”. So you have to activate the virtual environment by running this command “env\scripts\activate” in the terminal of  your code editor.
+5.	We used Django as a server-side language and it has a light-weight server to host our project.
+6.	To see the project running on the server, run this command “python manage.py runserver” in the terminal of your code editor.
+7.	Once you've completed these steps, the project should be up and running on your machine. You can access it by opening a web browser and navigating to the URL displayed in the terminal after running python manage.py runserver.
