@@ -38,6 +38,7 @@ def bookPage(request):
     }
     return render(request, 'baseapp/book2.html', context )
 
+
 def signup(request):
     if request.method == 'POST':
         firstName = request.POST['firstName']
@@ -46,14 +47,11 @@ def signup(request):
         email = request.POST['email']
         password = request.POST['password']
         confirm_password = request.POST['confirm_password']
-        
-    #     user = User.objects.create_user(username=username,  email=email, password=password)
-    #     user.save()
-    #     print("success")
-    #     return redirect('/')
-    # else:
-    #     return render(request, 'baseapp/signup1.html')
-        
+    
+        if len(password)<8:
+            messages.error(request, "password too short.")
+            return redirect('signup')
+            
         if password == confirm_password:
             if User.objects.filter(username=username).exists():
                 messages.error(request, "Username Already exist")
